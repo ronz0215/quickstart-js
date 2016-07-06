@@ -45,16 +45,17 @@
   <link rel="stylesheet" href="main.css">
 
   <!-- Firebase -->
-  <!-- *******************************************************************************
-       * TODO(DEVELOPER): Paste the initialization snippet by navigating to:
-
-        https://console.firebase.google.com
-
-       and choosing a project you've created.  Then click the red HTML logo at the top
-       right of the page with the caption "Add Firebase to your web app".
-
-       Copy the snippet that appears in place of this comment.
-       *************************************************************************** -->
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBMtR-jZQP4bPinRaefsvVlgqFgAFgC0Pg",
+    authDomain: "fir-databaseexample-f7858.firebaseapp.com",
+    databaseURL: "https://fir-databaseexample-f7858.firebaseio.com",
+    storageBucket: "fir-databaseexample-f7858.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
 
 </head>
 <body>
@@ -65,7 +66,9 @@
   <section id="page-splash">
     <h3 class="logo">Database Web Quickstart</h3>
     <div>
-      <button id="sign-in-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign in with Google</button>
+<!-- Removed the Google sign-in and replaced with annonomous sign-in main.js -->
+<!--       <button id="sign-in-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign in with Google</button> -->
+      <button id="sign-in-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect">Enter</button>
     </div>
   </section>
 
@@ -74,7 +77,8 @@
 
     <div class="mdl-layout__header-row titlebar">
       <h3 class="logo">Database Web Quickstart</h3>
-      <button id="sign-out-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign out</button>
+<!--       <button id="sign-out-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign out</button> -->
+      <button id="sign-out-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect">Exit</button>
     </div>
 
     <!-- Navigation Bar -->

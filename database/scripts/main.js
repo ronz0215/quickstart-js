@@ -131,7 +131,8 @@ function createPostElement(postId, title, text, author, authorId, authorPic) {
   postElement.getElementsByClassName('text')[0].innerText = text;
   postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = title;
   postElement.getElementsByClassName('username')[0].innerText = author || 'Anonymous';
-  postElement.getElementsByClassName('avatar')[0].style.backgroundImage = `url("${authorPic || './silhouette.jpg'}")`;
+  // postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("${authorPic || './silhouette.jpg'}")';
+  // postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("${authorPic || 'silhouette.jpg'}")';
 
   // Listen for comments.
   // [START child_event_listener_recycler]
@@ -289,8 +290,15 @@ function writeUserData(userId, name, email, imageUrl) {
 window.addEventListener('load', function() {
   // Bind Sign in button.
   signInButton.addEventListener('click', function() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
+    // var provider = new firebase.auth.GoogleAuthProvider();
+    // firebase.auth().signInWithPopup(provider);
+    //added this to change the sign in method
+    firebase.auth().signInAnonymously().catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
   });
 
   // Bind Sign out button.
